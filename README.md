@@ -1,2 +1,3 @@
 # Calculadora_ImcHTML
-Calcularo de IMC
+Calculadora de IMC
+
