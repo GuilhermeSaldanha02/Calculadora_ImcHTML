@@ -1,0 +1,122 @@
+
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ea; /* Verde claro suave */
+    margin: 0;
+    padding: 20px; /* Adicionado padding ao body para melhor espaçamento em telas menores */
+    box-sizing: border-box; /* Para que o padding não afete a largura total */
+}
+
+/* Barra de navegação (opcional) */
+nav {
+    background-color: #e9ecef; /* Cinza claro para a navegação */
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Container principal da calculadora */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Largura máxima para telas maiores */
+    box-sizing: border-box; /* Para que o padding não afete a largura total */
+}
+
+.container h1 {
+    color: #28a745; /* Título em verde */
+    margin-bottom: 25px;
+    font-size: 2.5em; /* Aumentei um pouco a fonte do título */
+}
+
+.container .input-group {
+    margin-bottom: 25px; /* Aumentei a margem inferior */
+    text-align: left; /* Alinhei o texto da label à esquerda */
+}
+
+.container label {
+    display: block;
+    margin-bottom: 10px; /* Aumentei a margem inferior da label */
+    color: #495057;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.container input[type="number"] {
+    width: calc(100% - 16px);
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Bordas mais arredondadas para os inputs */
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: 10px; /* Adicionei margem inferior aos inputs */
+}
+
+.container button {
+    padding: 14px 30px; /* Aumentei o padding do botão */
+    background-color: #007bff; /* Azul para o botão principal */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Bordas mais arredondadas para o botão */
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botão ocupa a largura total */
+    margin-top: 15px; /* Adicionei margem superior ao botão */
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos da área de resultado */
+#resultado {
+    margin-top: 30px; /* Aumentei a margem superior */
+    font-weight: bold;
+    color: #343a40;
+    font-size: 1.3em; /* Aumentei a fonte do resultado */
+}
+
+#classificacao {
+    margin-top: 15px;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 1.1em; /* Aumentei a fonte da classificação */
+}
+
+/* Estilos para mensagens de erro */
+.error-message {
+    color: #dc3545; /* Vermelho para mensagens de erro */
+    font-size: 0.9em;
+    margin-top: 5px;
+}
