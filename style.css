@@ -1,122 +1,185 @@
+/* Definição de Variáveis CSS com nova paleta de cores */
+:root {
+  /* Cores Primárias e de Ação */
+  --primary-color: #4caf50; /* Verde vibrante para ações principais (ex: botão) */
+  --primary-color-hover: #45a049; /* Verde um pouco mais escuro para hover */
+
+  /* Cores de Texto */
+  --text-dark: #333333; /* Texto principal escuro */
+  --text-medium: #555555; /* Texto de label e navegação */
+  --text-light: #777777; /* Texto de classificação e informações secundárias */
+  --text-white: #ffffff; /* Texto branco para fundos escuros */
+
+  /* Cores de Fundo */
+  --bg-light: #e8f5e9; /* Fundo geral muito claro (quase branco com um toque de verde) */
+  --bg-white: #ffffff; /* Fundo do container (branco puro) */
+  --nav-bg: #f5f5f5; /* Fundo da navegação (cinza muito claro) */
+
+  /* Cores de Borda e Detalhe */
+  --border-color: #cccccc; /* Cor da borda dos inputs e elementos gerais */
+  --focus-outline-color: rgba(76, 175, 80, 0.4); /* Foco suave para inputs */
+
+  /* Cores de Estado (Erro, Sucesso, etc.) */
+  --error-color: #d32f2f; /* Vermelho forte para mensagens de erro */
+
+  /* Fontes */
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Espaçamentos e Bordas */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 25px;
+  --spacing-xxl: 30px;
+}
 
 /* Estilos gerais */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f8ea; /* Verde claro suave */
-    margin: 0;
-    padding: 20px; /* Adicionado padding ao body para melhor espaçamento em telas menores */
-    box-sizing: border-box; /* Para que o padding não afete a largura total */
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-light); /* Fundo geral mais suave */
+  margin: 0;
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
+  color: var(--text-dark); /* Cor de texto padrão para o body */
 }
 
-/* Barra de navegação (opcional) */
+/* Barra de navegação */
 nav {
-    background-color: #e9ecef; /* Cinza claro para a navegação */
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: var(--nav-bg); /* Fundo da navegação cinza claro */
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--spacing-md);
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #495057;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--text-medium); /* Cor de texto dos links de navegação */
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #007bff;
+  color: var(--primary-color); /* Cor de hover para os links */
 }
 
 /* Container principal da calculadora */
 .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 400px; /* Largura máxima para telas maiores */
-    box-sizing: border-box; /* Para que o padding não afete a largura total */
+  background-color: var(--bg-white); /* Fundo branco puro para o container */
+  padding: var(--spacing-xxl);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .container h1 {
-    color: #28a745; /* Título em verde */
-    margin-bottom: 25px;
-    font-size: 2.5em; /* Aumentei um pouco a fonte do título */
+  color: var(--primary-color); /* Título em verde vibrante */
+  margin-bottom: var(--spacing-xl);
+  font-size: 2.5em;
 }
 
-.container .input-group {
-    margin-bottom: 25px; /* Aumentei a margem inferior */
-    text-align: left; /* Alinhei o texto da label à esquerda */
+.input-group {
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
 }
 
-.container label {
-    display: block;
-    margin-bottom: 10px; /* Aumentei a margem inferior da label */
-    color: #495057;
-    font-weight: bold;
-    font-size: 1.1em;
+.input-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-medium); /* Cor de texto para as labels */
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-.container input[type="number"] {
-    width: calc(100% - 16px);
-    padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 8px; /* Bordas mais arredondadas para os inputs */
-    box-sizing: border-box;
-    font-size: 1em;
-    margin-bottom: 10px; /* Adicionei margem inferior aos inputs */
+.input-group input[type="number"] {
+  width: calc(100% - 24px);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color); /* Cor da borda dos inputs */
+  border-radius: var(--border-radius-sm);
+  box-sizing: border-box;
+  font-size: 1em;
+  margin-bottom: var(--spacing-sm);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="number"]:focus {
+  border-color: var(--primary-color); /* Borda em verde vibrante ao focar */
+  box-shadow: 0 0 0 0.2rem var(--focus-outline-color); /* Sombra suave ao focar */
+  outline: none;
 }
 
 .container button {
-    padding: 14px 30px; /* Aumentei o padding do botão */
-    background-color: #007bff; /* Azul para o botão principal */
-    color: white;
-    border: none;
-    border-radius: 8px; /* Bordas mais arredondadas para o botão */
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Botão ocupa a largura total */
-    margin-top: 15px; /* Adicionei margem superior ao botão */
+  padding: var(--spacing-md) var(--spacing-xxl);
+  background-color: var(--primary-color); /* Botão com cor primária */
+  color: var(--text-white); /* Texto branco no botão */
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: var(--spacing-md);
 }
 
 .container button:hover {
-    background-color: #0056b3;
+  background-color: var(
+    --primary-color-hover
+  ); /* Hover do botão com cor um pouco mais escura */
 }
 
 /* Estilos da área de resultado */
 #resultado {
-    margin-top: 30px; /* Aumentei a margem superior */
-    font-weight: bold;
-    color: #343a40;
-    font-size: 1.3em; /* Aumentei a fonte do resultado */
+  margin-top: var(--spacing-xxl);
+  font-weight: bold;
+  color: var(--text-dark); /* Cor de texto escura para o resultado */
+  font-size: 1.3em;
 }
 
 #classificacao {
-    margin-top: 15px;
-    font-style: italic;
-    color: #6c757d;
-    font-size: 1.1em; /* Aumentei a fonte da classificação */
+  margin-top: var(--spacing-md);
+  font-style: italic;
+  color: var(--text-light); /* Cor de texto mais clara para a classificação */
+  font-size: 1.1em;
 }
 
 /* Estilos para mensagens de erro */
 .error-message {
-    color: #dc3545; /* Vermelho para mensagens de erro */
-    font-size: 0.9em;
-    margin-top: 5px;
+  color: var(--error-color); /* Cor de erro em vermelho forte */
+  font-size: 0.9em;
+  margin-top: var(--spacing-xs);
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+  body {
+    padding: var(--spacing-md);
+  }
+
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  .container h1 {
+    font-size: 2em;
+    margin-bottom: var(--spacing-lg);
+  }
 }

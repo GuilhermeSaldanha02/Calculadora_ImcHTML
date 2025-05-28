@@ -9,93 +9,35 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#">Google</a></li>
-            <li><a href="#">Outlook</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a></li>
+            <li><a href="https://outlook.live.com/" target="_blank" rel="noopener noreferrer">Outlook</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>Calculadora de IMC</h1>
 
-        <div class="input-group">
-            <label for="peso">Peso (kg):</label>
-            <input type="number" id="peso" placeholder="Ex: 70" step="0.01" required>
-            <div id="peso-error" class="error-message"></div>
-        </div>
+        <form id="imcForm">
+            <div class="input-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" placeholder="Ex: 70" step="0.01" required aria-describedby="peso-error">
+                <div id="peso-error" class="error-message" aria-live="polite"></div>
+            </div>
 
-        <div class="input-group">
-            <label for="altura">Altura (m):</label>
-            <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" required>
-            <div id="altura-error" class="error-message"></div>
-        </div>
+            <div class="input-group">
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" required aria-describedby="altura-error">
+                <div id="altura-error" class="error-message" aria-live="polite"></div>
+            </div>
 
-        <button onclick="calcularIMC()">Calcular IMC</button>
+            <button type="submit">Calcular IMC</button>
+        </form>
 
-        <div id="resultado"></div>
-
-        <div id="classificacao"></div>
+        <div id="resultado" aria-live="polite"></div>
+        <div id="classificacao" aria-live="polite"></div>
     </div>
 
-    <script>
-        function mostrarLoginUsuario() {
-            // Aqui você pode adicionar lógica para mostrar/ocultar um formulário de login
-            // ou redirecionar para uma página de login específica.
-            console.log("Opção de login com usuário selecionada.");
-        }
-
-        function calcularIMC() {
-            const pesoInput = document.getElementById("peso");
-            const alturaInput = document.getElementById("altura");
-            const peso = parseFloat(pesoInput.value);
-            const altura = parseFloat(alturaInput.value);
-            const resultadoDiv = document.getElementById("resultado");
-            const classificacaoDiv = document.getElementById("classificacao");
-            const pesoErrorDiv = document.getElementById("peso-error");
-            const alturaErrorDiv = document.getElementById("altura-error");
-
-            // Limpar mensagens de erro
-            pesoErrorDiv.textContent = "";
-            alturaErrorDiv.textContent = "";
-
-            // Validação de entrada mais detalhada
-            let isValid = true;
-            if (isNaN(peso) || peso <= 0) {
-                pesoErrorDiv.textContent = "Por favor, insira um peso válido (maior que 0).";
-                isValid = false;
-            }
-            if (isNaN(altura) || altura <= 0) {
-                alturaErrorDiv.textContent = "Por favor, insira uma altura válida (maior que 0).";
-                isValid = false;
-            }
-            if (!isValid) {
-                resultadoDiv.textContent = "";
-                classificacaoDiv.textContent = "";
-                return;
-            }
-
-            // Cálculo do IMC
-            const imc = peso / (altura * altura);
-            resultadoDiv.textContent = `Seu IMC é: ${imc.toFixed(2)}`;
-
-            // Classificação do IMC
-            let classificacao = "";
-            if (imc < 18.5) {
-                classificacao = "Abaixo do peso";
-            } else if (imc >= 18.5 && imc < 25) {
-                classificacao = "Peso normal";
-            } else if (imc >= 25 && imc < 30) {
-                classificacao = "Sobrepeso";
-            } else if (imc >= 30 && imc < 35) {
-                classificacao = "Obesidade grau I";
-            } else if (imc >= 35 && imc < 40) {
-                classificacao = "Obesidade grau II";
-            } else {
-                classificacao = "Obesidade grau III";
-            }
-
-            classificacaoDiv.textContent = `Classificação: ${classificacao}`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
